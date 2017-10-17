@@ -1,0 +1,57 @@
+mat-toolbar.top-bar {
+  position: fixed;
+  top:0;
+  z-index: 1000;
+  border-bottom: 3pt solid rgb(160,16,4);
+}
+
+mat-toolbar.bottom-bar {
+    position: fixed;
+    bottom:   0;
+    overflow: hidden;
+    min-height: 0;
+    height:   35px;
+}
+
+mat-toolbar.bottom-bar >>> mat-toolbar-row {
+    height: 35px;
+}
+
+.branding {
+    padding-right: 16px;
+}
+
+.demo-panel {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 64px;
+    margin-bottom: 35px;
+}
+
+.fill-space {
+    flex: 1 1 auto;
+}
+
+
+.sigplot-panel:after {
+    content: "";
+    display: table;
+    clear:   both;
+}
+
+.sigplot-plot {
+    width:  80%;
+    height: 400px;
+    float:  left;
+}
+
+.sigplot-controls {
+    width:  20%;
+    height: 100%;
+    float:  left;
+}
+
+.sigplot-controls button {
+    width: 100%;
+}

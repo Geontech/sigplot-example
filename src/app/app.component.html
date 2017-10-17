@@ -1,0 +1,61 @@
+<mat-toolbar color="primary" class="top-bar">
+    <div class="branding">
+        <a href="http://www.geontech.com" mat-icon-button class="icon-hawkeye"><img style="height: 40px;" src="../assets/images/geon-logo-white.svg"></a>
+    </div>
+
+    <h1>SigPlot Angular Components Demo</h1>
+
+    <span class="fill-space"></span>
+
+    <span><a mat-button href="http://github.com/LGSInnovations/sigplot/tree/develop-2.0">SigPlot 2.0</a></span>
+    <span><a mat-button href="https://www.npmjs.com/package/sigplot-ts">Typings Extensions</a></span>
+    <span><a mat-button href="https://www.npmjs.com/package/sigplot-ng">Angular Components</a></span>
+</mat-toolbar>
+
+<div class="demo-panel">
+    <mat-tab-group>
+        <mat-tab label="Line Plot">
+            <div class="sigplot-panel">
+                <sigplot-line
+                    class="sigplot-plot"
+                    [colors]="colors"
+                    [data]="linePlotData$"
+                    [highlight]="linePlotHighlight$"
+                    [showLegend]="false">
+                </sigplot-line>
+                <div class="sigplot-controls">
+                    <button mat-button (click)="toggleHighlight()">Toggle Highlight</button>
+                    <button mat-button (click)="changeLineColor()">Change Color</button>
+                </div>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="Raster Plot">
+            <div class="sigplot-panel">
+                <sigplot-raster
+                    class="sigplot-plot"
+                    [colors]="colors"
+                    [data]="rasterPlotData$"
+                    [cmap]="rasterColorMap">
+                </sigplot-raster>
+                <div class="sigplot-controls">
+                    <button mat-button (click)="changeRasterColorMap()">Change Color Map</button>
+                </div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+    
+    <hr>
+
+    <div class="mat-body">
+        <p>This demo showcases a growing base set of Angular (v 4+) Components which provide simplified interfaces to the types of plots one might want for scientific data.  You can find the source for this demo <a href="http://github.com/geontech/sigplot-example">here</a>, and use the links above to find SigPlot, the Typings-friendly extensions, and these Angular Components.</p>
+
+        <p>The plots above are driven by a signal generator producing pseudo-random noise with 2048 samples at 100 Hz.  Each plot Component has a base set of inputs as well as inputs specific to that category of plot (Line plots have highlights, etc.).  Only the base set is exposed at this time.</p>
+
+        <p>Check back often as the demo is likely to change as more plot types and features are exposed.  Please feel free to fork and submit pull requests as well if you have ideas for features.</p>
+    </div>
+</div>
+
+<mat-toolbar class="bottom-bar">
+    <a mat-button href="http://www.geontech.com">Geon Technologies, LLC &mdash; &copy; 2017</a>
+</mat-toolbar>
