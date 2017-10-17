@@ -1,6 +1,6 @@
 {
   "name": "sigplot-example",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "repository": "https://github.com/geontech/sigplot-example.git",
   "author": "Thomas Goodwin <btgoodwin@geontech.com>",
   "license": "GPL-3.0",
