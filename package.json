@@ -10,6 +10,8 @@
     "start:dev": "npm run start -- --preserve-symlinks --port=4201 --host=$(hostname -I 2> /dev/null)",
     "build": "ng build",
     "build:dev": "npm run build -- --preserve-symlinks",
+    "example": "ng build --output-path docs --base-href $npm_package_name",
+    "example:prod": "npm run example -- --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -31,7 +33,7 @@
     "hammerjs": "^2.0.8",
     "rxjs": "^5.4.2",
     "sigplot": "git://github.com/geontech/sigplot.git#develop-2.0-ts",
-    "sigplot-ng": "^0.2.0",
+    "sigplot-ng": "^0.2.3",
     "sigplot-ts": "^0.2.0",
     "zone.js": "^0.8.14"
   },
