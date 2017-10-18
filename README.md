@@ -43,3 +43,7 @@ export class YourModule {}
 ```
 
 The additional types used in this library as well as mirrors of the Typings found in `sigplot` are provided by `sigplot-ts`.
+
+[sigplot]: https://www.npmjs.com/package/sigplot
+[sigplot-ng]: https://www.npmjs.com/package/sigplot-ng
+[sigplot-ts]: https://www.npmjs.com/package/sigplot-ts
