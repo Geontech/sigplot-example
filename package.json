@@ -33,8 +33,8 @@
     "hammerjs": "^2.0.8",
     "rxjs": "^5.4.2",
     "sigplot": "git://github.com/geontech/sigplot.git#develop-2.0-ts",
-    "sigplot-ng": "^0.2.3",
-    "sigplot-ts": "^0.2.0",
+    "sigplot-ng": "^0.3.0",
+    "sigplot-ts": "^0.2.4",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {

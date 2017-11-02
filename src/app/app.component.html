@@ -19,9 +19,8 @@
                 <sigplot-line
                     class="sigplot-plot"
                     [colors]="colors"
-                    [data]="linePlotData$"
-                    [highlight]="linePlotHighlight$"
-                    [showLegend]="false">
+                    [data$]="linePlotData$"
+                    [highlight]="linePlotHighlight$">
                 </sigplot-line>
                 <div class="sigplot-controls">
                     <button mat-button (click)="toggleHighlight()">Toggle Highlight</button>
@@ -35,8 +34,9 @@
                 <sigplot-raster
                     class="sigplot-plot"
                     [colors]="colors"
-                    [data]="rasterPlotData$"
-                    [cmap]="rasterColorMap">
+                    [data$]="rasterPlotData$"
+                    [cmap]="rasterColorMap"
+                    [legend]="false">
                 </sigplot-raster>
                 <div class="sigplot-controls">
                     <button mat-button (click)="changeRasterColorMap()">Change Color Map</button>
@@ -44,7 +44,7 @@
             </div>
         </mat-tab>
     </mat-tab-group>
-    
+
     <hr>
 
     <div class="mat-body">

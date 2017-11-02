@@ -9,13 +9,30 @@ import * as lib from 'sigplot-ts';
 
 import {
   HighlightCommand,
-  HighlightAction
+  HighlightAction,
+  defaultLineOptions,
+  LINE_PLOT_OPTIONS
 } from 'sigplot-ng';
+
+/**
+ * This is an example of how to inject custom options into a plot.
+ * In this case, we are hiding the legend initially via the options rather than
+ * using the component's Input.
+ */
+export function customLineOptions(): lib.ConstructorOptions {
+  const opts = defaultLineOptions();
+  opts.legend = false;
+  return opts;
+}
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [
+    // See above comments for this example
+    { provide: LINE_PLOT_OPTIONS, useFactory: customLineOptions }
+  ]
 })
 export class AppComponent implements OnInit {
   title = 'app';

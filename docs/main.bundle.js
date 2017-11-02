@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar color=\"primary\" class=\"top-bar\">\n    <div class=\"branding\">\n        <a href=\"http://www.geontech.com\" mat-icon-button class=\"icon-hawkeye\"><img style=\"height: 40px;\" src=\"assets/images/geon-logo-white.svg\"></a>\n    </div>\n\n    <h1>SigPlot+Angular Demo</h1>\n\n    <span class=\"fill-space\"></span>\n\n    <span><a mat-button href=\"http://github.com/LGSInnovations/sigplot/tree/develop-2.0\">SigPlot 2.0</a></span>\n    <span><a mat-button href=\"https://www.npmjs.com/package/sigplot-ts\">Typings Extensions</a></span>\n    <span><a mat-button href=\"https://www.npmjs.com/package/sigplot-ng\">Angular Components</a></span>\n</mat-toolbar>\n\n<div class=\"demo-panel\">\n    <mat-tab-group>\n        <mat-tab label=\"Line Plot\">\n            <div class=\"sigplot-panel\">\n                <sigplot-line\n                    class=\"sigplot-plot\"\n                    [colors]=\"colors\"\n                    [data]=\"linePlotData$\"\n                    [highlight]=\"linePlotHighlight$\"\n                    [showLegend]=\"false\">\n                </sigplot-line>\n                <div class=\"sigplot-controls\">\n                    <button mat-button (click)=\"toggleHighlight()\">Toggle Highlight</button>\n                    <button mat-button (click)=\"changeLineColor()\">Change Color</button>\n                </div>\n            </div>\n        </mat-tab>\n\n        <mat-tab label=\"Raster Plot\">\n            <div class=\"sigplot-panel\">\n                <sigplot-raster\n                    class=\"sigplot-plot\"\n                    [colors]=\"colors\"\n                    [data]=\"rasterPlotData$\"\n                    [cmap]=\"rasterColorMap\">\n                </sigplot-raster>\n                <div class=\"sigplot-controls\">\n                    <button mat-button (click)=\"changeRasterColorMap()\">Change Color Map</button>\n                </div>\n            </div>\n        </mat-tab>\n    </mat-tab-group>\n    \n    <hr>\n\n    <div class=\"mat-body\">\n        <p>This demo showcases a growing base set of Angular (v 4+) Components which provide simplified interfaces to the types of plots one might want for scientific data.  You can find the source for this demo <a href=\"http://github.com/geontech/sigplot-example\">here</a>, and use the links above to find SigPlot, the Typings-friendly extensions, and these Angular Components.</p>\n\n        <p>The plots above are driven by a signal generator producing pseudo-random noise with 2048 samples at 100 Hz.  Each plot Component has a base set of inputs as well as inputs specific to that category of plot (Line plots have highlights, etc.).  Only the base set is exposed at this time.</p>\n\n        <p>Check back often as the demo is likely to change as more plot types and features are exposed.  Please feel free to fork and submit pull requests as well if you have ideas for features.</p>\n    </div>\n</div>\n\n<mat-toolbar class=\"bottom-bar\">\n    <a mat-button href=\"http://www.geontech.com\">Geon Technologies, LLC &mdash; &copy; 2017</a>\n</mat-toolbar>"
+module.exports = "<mat-toolbar color=\"primary\" class=\"top-bar\">\n    <div class=\"branding\">\n        <a href=\"http://www.geontech.com\" mat-icon-button class=\"icon-hawkeye\"><img style=\"height: 40px;\" src=\"assets/images/geon-logo-white.svg\"></a>\n    </div>\n\n    <h1>SigPlot+Angular Demo</h1>\n\n    <span class=\"fill-space\"></span>\n\n    <span><a mat-button href=\"http://github.com/LGSInnovations/sigplot/tree/develop-2.0\">SigPlot 2.0</a></span>\n    <span><a mat-button href=\"https://www.npmjs.com/package/sigplot-ts\">Typings Extensions</a></span>\n    <span><a mat-button href=\"https://www.npmjs.com/package/sigplot-ng\">Angular Components</a></span>\n</mat-toolbar>\n\n<div class=\"demo-panel\">\n    <mat-tab-group>\n        <mat-tab label=\"Line Plot\">\n            <div class=\"sigplot-panel\">\n                <sigplot-line\n                    class=\"sigplot-plot\"\n                    [colors]=\"colors\"\n                    [data$]=\"linePlotData$\"\n                    [highlight]=\"linePlotHighlight$\">\n                </sigplot-line>\n                <div class=\"sigplot-controls\">\n                    <button mat-button (click)=\"toggleHighlight()\">Toggle Highlight</button>\n                    <button mat-button (click)=\"changeLineColor()\">Change Color</button>\n                </div>\n            </div>\n        </mat-tab>\n\n        <mat-tab label=\"Raster Plot\">\n            <div class=\"sigplot-panel\">\n                <sigplot-raster\n                    class=\"sigplot-plot\"\n                    [colors]=\"colors\"\n                    [data$]=\"rasterPlotData$\"\n                    [cmap]=\"rasterColorMap\"\n                    [legend]=\"false\">\n                </sigplot-raster>\n                <div class=\"sigplot-controls\">\n                    <button mat-button (click)=\"changeRasterColorMap()\">Change Color Map</button>\n                </div>\n            </div>\n        </mat-tab>\n    </mat-tab-group>\n\n    <hr>\n\n    <div class=\"mat-body\">\n        <p>This demo showcases a growing base set of Angular (v 4+) Components which provide simplified interfaces to the types of plots one might want for scientific data.  You can find the source for this demo <a href=\"http://github.com/geontech/sigplot-example\">here</a>, and use the links above to find SigPlot, the Typings-friendly extensions, and these Angular Components.</p>\n\n        <p>The plots above are driven by a signal generator producing pseudo-random noise with 2048 samples at 100 Hz.  Each plot Component has a base set of inputs as well as inputs specific to that category of plot (Line plots have highlights, etc.).  Only the base set is exposed at this time.</p>\n\n        <p>Check back often as the demo is likely to change as more plot types and features are exposed.  Please feel free to fork and submit pull requests as well if you have ideas for features.</p>\n    </div>\n</div>\n\n<mat-toolbar class=\"bottom-bar\">\n    <a mat-button href=\"http://www.geontech.com\">Geon Technologies, LLC &mdash; &copy; 2017</a>\n</mat-toolbar>\n"
 
 /***/ }),
 
@@ -62,6 +62,17 @@ var Subject_1 = __webpack_require__("../../../../rxjs/Subject.js");
 var signals_1 = __webpack_require__("../../../../../src/app/signals/index.ts");
 var lib = __webpack_require__("../../../../sigplot-ts/esm/index.js");
 var sigplot_ng_1 = __webpack_require__("../../../../sigplot-ng/sigplot-ng.umd.js");
+/**
+ * This is an example of how to inject custom options into a plot.
+ * In this case, we are hiding the legend initially via the options rather than
+ * using the component's Input.
+ */
+function customLineOptions() {
+    var opts = sigplot_ng_1.defaultLineOptions();
+    opts.legend = false;
+    return opts;
+}
+exports.customLineOptions = customLineOptions;
 var AppComponent = (function () {
     function AppComponent() {
         var _this = this;
@@ -165,7 +176,11 @@ AppComponent = __decorate([
     core_1.Component({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/app.component.css")]
+        styles: [__webpack_require__("../../../../../src/app/app.component.css")],
+        providers: [
+            // See above comments for this example
+            { provide: sigplot_ng_1.LINE_PLOT_OPTIONS, useFactory: customLineOptions }
+        ]
     }),
     __metadata("design:paramtypes", [])
 ], AppComponent);
